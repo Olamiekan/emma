@@ -1,0 +1,1419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="./Login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background-color: #f5f7fa;
+}
+
+   :root {
+    --primary: #343638;
+    --secondary: white;
+    --orange: #f7a500;
+    --drop: #72767a;
+    --text: #000000;
+    --border: #eeeeee;
+    --green: #20b36c;
+    --red: #f0464b;
+    --ash: #f7fafc;
+    --noran: #cf810c;
+  }
+
+  .TopCon1{
+    background-color: #18191f;
+    width: 100%;
+    /* height: 52px; */
+    display: flex;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: fixed;
+    z-index: 1000;
+}
+
+.EXWEB{
+    display: flex;
+    background-color: #24272b;
+    width: 180px;
+    height: 35px;
+    margin-top: 9px;
+    border-radius: 5px;
+    margin-left: 22px;
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.EX{
+    background-color: var(--primary);
+    padding-top: 10px;
+    border-radius: 5px;
+    margin: 2px;
+    width: 90px;
+    text-align: center;
+}
+
+.WB{
+   padding-top: 10px;
+   border-radius: 5px;
+   margin: 2px;
+   width: 90px;
+   text-align: center;  
+}
+
+.line{
+    background-color: var(--primary);
+    border: thin solid var(--primary);
+    height: 25px;
+    margin-top: 13px;
+    margin-left: 22px;
+    margin-right: 10px;
+}
+
+.nav-links-Con1{
+    padding: 16px 0;
+}
+
+.nav-links{
+    display: flex;
+    color: var(--secondary);
+    list-style: none;
+    padding-left: 1px;
+}
+
+.nav-links > .nav-links-item{
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-links > .nav-links-item > a{
+    text-decoration: none;
+    color: var(--secondary);
+    font-size: 0.85rem;
+    transition: .3s ease;
+}
+
+.nav-links > .nav-links-item:hover > a{
+    color: var(--orange);
+    /* background-color: var(--primary); */
+    /* height: 52px; */
+    /* padding: 15px; */
+}
+
+.nav-links-item > a > .fa-chevron-down{
+    display: inline-block;
+    /* height: 3px;
+    width: -50px; */
+    padding-left: 1px;
+    transition: .3s ease;
+    pointer-events: none;
+    color: var(--drop);
+}
+
+.nav-links-item:hover > a > .fa-chevron-down{
+    transform: rotate(180deg);
+    color: var(--orange);
+}
+
+.nav-links > .nav-links-item > .dropdown-menu{
+    width: 500px;
+    position: absolute;
+    top: 36px;
+    /* left: -10px; */
+    /* list-style: none; */
+    /* overflow: hidden; */
+    background-color:#16171a;
+    /* transform: translateY(0); */
+    transition: .3s ease;
+    visibility: hidden;
+    opacity: 0;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+} 
+
+.nav-links > .nav-links-item:hover > .dropdown-menu{
+    /* transform: translate(20px); */
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav-links > .nav-links-item > .dropdown-menu > .dropdown-menu-item{
+    list-style: none;
+}
+
+.nav-links > .nav-links-item > .dropdown-menu > .dropdown-menu-item:hover{
+    background-color: var(--primary);
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.nav-links > .nav-links-item > .dropdown-menu > .dropdown-menu-item > a{
+    text-decoration: none;
+    display: block;
+    color: var(--secondary);
+    font-weight: 500;
+    transition: 0.3s ease;
+    padding: 14px;
+}
+
+.nav-links > .nav-links-item > .dropdown-menu > .dropdown-menu-item > a:hover{
+    color: var(--orange);
+}
+
+.nav-links > .nav-links-item > .dropdown-menu > .dropdown-menu-item > p{
+    padding-left: 62px;
+    color: var(--drop);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.dropdown-menu-item-2:hover{
+    background-color: var(--primary);
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.dropdown-menu-item-2 > a{
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-menu-item-2 > a:hover{
+    color: var(--orange);
+}
+
+.dropdown-menu-item-2 > p{
+    padding-left: 37px;
+    color: var(--drop);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* .bTop{
+    background-color: #292a30;
+    color: var(--drop);
+    border-radius: 30px;
+    width: 160px;
+    height: 36px;
+    font-size: 13px;
+    border: none;
+    margin-left: 10px;
+    margin-top: 8px;
+    padding-right: 20px;
+}
+
+.bTop:hover{
+    border: thin solid var(--orange);
+}  */
+
+.search-box {
+  position: relative;
+  background-color: #292a30;
+  color: var(--drop);
+  border-radius: 30px;
+  width: 160px;
+  height: 36px;
+  margin-left: 10px;
+  margin-top: 8px;
+}
+
+.search-box input {
+  width: 100%;
+  height: 100%;
+  padding-left: 55px;
+  padding-right: 10px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--drop);
+  font-size: 13px;
+  border-radius: 30px;
+}
+
+.search-box:hover {
+  border: thin solid var(--orange);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 16px;
+}
+
+.search-icon {
+  left: 12px;
+}
+
+.fire-icon {
+  left: 32px;
+}
+
+.logsign{
+    display: flex;
+    width: 160px;
+    height: 35px;
+    margin-top: 9px;
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.log{
+    color: var(--secondary);
+    text-align: center;
+    padding-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    width: 80px;
+}
+
+.log:hover{
+    color: var(--orange);
+    background-color: #292a30;
+    padding: 12px;
+    border-radius: 3px;
+}
+
+.sign{
+    text-decoration: none;
+    color: #000000ba;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--orange);
+    text-align: center;
+    padding-top: 10px;
+    width: 80px;
+    border-radius: 3px;
+    transition: transform 3s linear;
+    animation-name: bounce;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes bounce {
+    0%{
+        transform: scale(unset);
+    }
+
+    100%{
+        transform: scale(1.2);
+    }
+}
+
+.arrow{
+    width: 28px;
+    height: 28px;
+    margin-top: 12px;
+    padding-left: 5px;
+}
+
+.drpmenuitem1{
+    width: 180px;
+}
+
+.drpmenuitem2{
+    color: whitesmoke;
+    padding-top: 8px;
+    text-align: center;
+    padding-bottom: 13px;
+}
+
+.drpmenuitem3{
+    color: rgba(0, 0, 0, 0.881);
+    font-size: 13px;
+    text-decoration: none;
+    background-color: var(--orange);
+    padding: 9px;
+    font-weight: bold;
+    border-radius: 3px;
+    /* position: absolute;
+    right: 95px; */
+    word-spacing: 2px;
+    display: block;
+    text-align: center;
+}
+
+.drpmenu{
+    background-color: #24272b;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 25px;
+    padding-bottom: 30px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: 7.5px;
+    position: absolute;
+    right: 70px;
+    display: none;
+}
+
+/* .drpdown:hover .arrow {
+  background-color: #24272b;
+  padding: 10px;
+} */
+
+.drpdown:hover .drpmenu {
+  display: block;
+}
+
+.globe{
+    width: 35px;
+    height: 35px;
+    margin-top: 12px;
+    padding: 5px;
+}
+
+.sch {
+    display: none;
+}
+.menu {
+    display: none;
+}
+
+.sideleft{
+    display: inline-flex;
+}
+.sidemid {
+    display: inline-flex;
+}
+.sideright {
+    display: inline-flex;
+}
+
+
+.logincont{
+    display: flex;
+    width: 100%;
+    /* background-color: #000000; */
+}
+
+.LogLeft{
+    background-color: var(--text);
+    Width: 50%;
+}
+
+.cs{
+    padding-top: 30px;
+}
+
+.star{
+    width: 200px;
+    position: absolute;
+    top: 155px;
+    left: -8px;
+    transition: transform 3s linear;
+    animation-name: move;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes move {
+    0%{
+        transform: scale(unset);
+    }
+
+    100%{
+        transform: scale(2.2);
+    }
+}
+
+.by{
+    position: absolute;
+    left: 310px;
+    top: 220px;
+    width: 110px;
+}
+
+
+.seize{
+    color: var(--secondary);
+    text-align: center;
+    padding-top: 130px;
+    font-size: 43px;
+}
+
+.box4{
+    padding-top: 140px;
+    display: flex;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    justify-content: space-between;
+}
+
+.b4 > img{
+    width: 140px;
+    height: 153px;
+}
+
+.pp1{
+    color: var(--noran);
+    position: absolute;
+    bottom: -40px;
+    left: 90px;
+    font-size: 21px;
+}
+
+.pp2{
+    color: var(--secondary);
+    position: absolute;
+    font-size: 13px;
+    bottom: -60px;
+    left: 82px;
+}
+
+.pp3{
+    color: var(--noran);
+    position: absolute;
+    bottom: -40px;
+    left: 225px;
+    font-size: 21px;
+}
+
+.pp4{
+    color: var(--secondary);
+    position: absolute;
+    font-size: 13px;
+    bottom: -60px;
+    left: 210px;
+}
+
+.pp5{
+    color: var(--noran);
+    position: absolute;
+    bottom: -40px;
+    left: 370px;
+    font-size: 21px;
+  
+}
+
+.pp6{
+    color: var(--secondary);
+    position: absolute;
+    font-size: 13px;
+    bottom: -60px;
+    left: 335px;
+}
+
+.pp7{
+    color: var(--noran);
+    position: absolute;
+    bottom: -40px;
+    left: 499px;
+    font-size: 21px;
+}
+
+.pp8{
+    color: var(--secondary);
+    position: absolute;
+    font-size: 13px;
+    bottom: -60px;
+    left: 488px;
+   
+}
+
+.LogRight{
+    background-color: var(--secondary);
+    Width: 50%;
+}
+
+.bord{
+    width: 70%;
+    height: 650px;
+    margin: 100px auto;
+    border: thin solid #e7e9ea;
+    border-radius: 10px;
+}
+
+.wtbsu{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 23px;
+    padding-right: 23px;
+    border-bottom: thin solid #e7e9ea;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.wtb{
+    display: flex;
+    align-items: center;
+    color: #D6890D;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.wtb:hover{
+    color: #ffd787;
+    cursor: pointer;
+}
+
+.emq{
+    display: flex;
+    padding-left: 23px;
+    padding-top: 35px;
+    gap: 20px;
+}
+
+form{
+    padding-left: 23px;
+    padding-top: 20px;
+}
+
+#Contact{
+    width: 95%;
+    padding: 17px;
+    font-size: 16px;
+    color: #81858c;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f5f7;
+}
+
+#Password{
+    width: 95%;
+    padding: 17px;
+    font-size: 16px;
+    color: #81858c;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f5f7;
+}
+
+.Fp{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 26px;
+    color: #D6890D;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.Fp:hover{
+    color: #ffd787;
+    cursor: pointer;
+}
+
+.btli{
+    text-align: center;
+    width: 90%;
+    padding: 17px;
+    background-color: var(--orange);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 23px;
+    margin-top: 23px;
+}
+
+.btli:hover{
+    background-color: #ffd787;
+    cursor: pointer;
+}
+
+.linl{
+    width: 160px;
+    border: 1px solid #f3f2f2;
+}
+
+.pli{
+    color: #81858c;
+}               
+
+.sbox{
+    width: 45px;
+    height: 45px;
+    border: thin solid #e7e9ea;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 7px;
+}
+
+.sbox:hover{
+    background-color: #f2f5f7;
+    cursor: pointer;
+}
+
+.gat:hover{
+    cursor: pointer;
+}
+
+.liwsa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #D6890D;
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+.liwsa:hover{
+    color: #ffd787;
+    cursor: pointer;
+}
+
+.headphone{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--orange);
+}
+
+.he{
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+.dowhea{
+    position: fixed;
+    z-index: 2;
+    right: 30px;
+    bottom: 22px
+}
+
+
+
+
+/* media query */
+
+/* Navigation bar */
+@media (max-width:1440px) {
+    .TopCon1 {
+    width: 100%;
+    
+}
+.sideleft {
+    display: inline-flex;
+    width: 20%;
+    
+}
+.sidemid {
+    display: inline-flex;
+    width: 60%;
+    
+}
+.sideright {
+    display: inline-flex;
+    width: 20%;
+    
+}
+}
+
+@media (max-width:1280px) {
+      .TopCon1 {
+    width: 100%;
+    position: relative;
+}
+.sideleft {
+    display: inline-flex;
+    width: 20%;
+}
+.sidemid {
+    display: inline-flex;
+    width: 65%;  
+}
+.search-box {
+    display: none;
+}
+.drpdown{
+    display: none;
+}
+.globe{
+    display: none;
+}
+.sideright {
+    display: inline-flex;
+    width: 25%; 
+}
+.sch {
+    display: block;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.menu {
+    display: block;
+    margin-left: 5px;
+    margin-top: 15px;
+}
+}
+
+@media (max-width:1120px) {
+    .TopCon1 {
+    width: 100%;
+    position: relative;
+}
+.EXWEB {
+    display: none;
+}
+.sideleft {
+    display: inline-flex;
+    width: 10%;
+    
+}
+.sidemid {
+    display: inline-flex;
+    width: 65%;  
+}
+.search-box {
+    display: none;
+}
+.drpdown{
+    display: none;
+}
+.globe{
+    display: none;
+}
+.sideright {
+    display: inline-flex;
+    width: 25%;
+}
+.sch {
+    display: block;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.menu {
+    display: block;
+    margin-left: 5px;
+    margin-top: 15px;
+}
+}
+
+@media (max-width:923px) {
+    .TopCon1 {
+    width: 100%;
+    position: relative;
+}
+.EXWEB {
+    display: none;
+}
+.logsign {
+    display: none;
+}
+.sideleft {
+    display: inline-flex;
+    width: 10%;
+    
+}
+.sidemid {
+    display: inline-flex;
+    width: 80%;  
+}
+.search-box {
+    display: none;
+}
+.drpdown{
+    display: none;
+}
+.globe{
+    display: none;
+}
+.sideright {
+    display: inline-flex;
+    width: 10%; 
+}
+.sch {
+    display: block;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+.menu {
+    display: block;
+    margin-left: 5px;
+    margin-top: 15px;
+}
+}
+
+@media (max-width:753px) {
+    .TopCon1 {
+    width: 100%;
+    position: relative;
+}
+.EXWEB {
+    display: none;
+}
+.logsign {
+    display: none;
+}
+.sideleft {
+    display: inline-flex;
+    width: 30%;
+    
+}
+.sidemid {
+    display: none;
+}
+.search-box {
+    display: none;
+}
+.drpdown{
+    display: none;
+}
+.globe{
+    display: none;
+}
+.sideright {
+    display: inline-flex;
+    width: 70%;
+}
+.sch {
+    display: block;
+    position: absolute;
+    right: 9%;
+}
+.menu {
+    display: block;
+    position: absolute;
+    right: 4%;
+}
+}
+
+
+@media (max-width:425px) {
+    .TopCon1 {
+    width: 100%;
+    position: relative;
+}
+    .sch {
+    display: block;
+    position: absolute;
+    right: 15%;
+}
+.menu {
+    display: block;
+    position: absolute;
+    right: 4%;
+}
+}
+
+
+/* logleft right */
+
+@media (max-width:1100px) {
+    .TopCon1 {
+    width: 100%;
+    /* position: relative; */
+}
+.LogRight{
+    background-color: var(--secondary);
+    Width: 100%;
+    display: block;
+    position: absolute;
+}
+.Logleft{
+    background-color: var(--secondary);
+    Width: 50%;
+    position: absolute;
+     display: none;
+}
+}
+
+@media (max-width:611px) {
+    .TopCon1 {
+    width: 100%;
+    /* position: relative; */
+}
+.LogRight{
+    background-color: var(--secondary);
+    Width: 100%;
+    display: block;
+    position: absolute;
+}
+.Logleft{
+    background-color: var(--secondary);
+    /* Width: 50%;
+    position: absolute; */
+    display: none;
+}
+.box4 {
+    display: none;
+}
+}
+
+@media (max-width:320px) {
+    .TopCon1 {
+    width: 100%;
+    /* position: relative; */
+}
+
+.LogRight{
+    background-color: var(--secondary);
+    Width: 100%;
+    display: block;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+}
+.box4 {
+    border: thin solid black;
+    display: none;
+   
+ 
+}
+.by{
+    display: none;
+}
+.bord{
+    width: 100%;
+    /* height: 650px; */
+    margin: 100px auto;
+    /* border: thin solid #e7e9ea; */
+    border-radius: 10px;
+    border: thin solid yellow;
+}
+.btli{
+    width: 85%;
+}
+
+}
+
+@media (max-width:376px) {
+    .TopCon1 {
+    width: 100%;
+    /* position: relative; */
+}
+.by{
+    display: none;
+}
+
+}
+
+@media (max-width:420px) {
+    .TopCon1 {
+    width: 100%;
+    /* position: relative; */
+}
+.by{
+    display: none;
+}
+
+}
+
+@media (max-width:780px) {
+    .bord{
+    width: 65%;
+    height: 650px;
+    margin: 100px auto;
+    border: thin solid #e7e9ea;
+    border-radius: 10px;
+}
+}
+    </style>
+</head>
+<body>
+
+    <div>
+  
+    <div class="TopCon1">
+
+        <div class="sideleft">
+             <div class="TC1img1">
+                <a href="#"><img src="./img/download (2).svg" alt="" style="width: 80px; 
+                padding-left: 17px;  padding-top: 15px;"></a>
+            </div>
+            <div class="EXWEB">
+                <p class="EX">Exchange</p>
+                <p class="WB">WEB3</p>
+            </div>
+        </div>
+
+         <div class="sidemid">
+            <div class="line"></div>
+
+            <div class="nav-links-Con1">
+                <ul class="nav-links">
+                <li class="nav-links-item"><a href="#">Buy Crypto<i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/p2p.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            P2P Trading(0 Fees)<img src="./Multimedia/Images/flame.svg" alt="" style="padding-left: 5px;"></a>
+                            <p>60+ Fiat Currencies and Various popular <br>
+                                local payment methods with Best Prices</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/ocb.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            One-Click Buy</a>
+                            <p>Buy Crypto Within Seconds</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/fd.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Flat Deposit</a>
+                            <p>Top up Balance via Bank Transfer or a <br> 
+                                Bank Card</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/c.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Convert<img src="./Multimedia/Images/flame.svg" alt="" style="padding-left: 5px;"></a>
+                            <p>Quick conversion with zero fees and <br> 
+                                no slippage</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/cd.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Crypto Deposit</a>
+                            <p>Instant Crypto Deposits to Your Account</p>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-links-item"><a href="#">Markets</a></li>
+                <li class="nav-links-item"><a href="#">Trade<i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <p style=" color: #72767a; font-size:14px; padding-left: 22px;">Trading</p>
+                            <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/tp.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                                Trading Portal</a>
+                                <p>Access the latest trading opportunities</p>
+                            </li>
+                            <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/s.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                                Spot<i class="fa-solid fa-chevron-right" style="padding-left: 200px;"></i></a>
+                                <p>Trade the Spot market with up to 10x <br> leverage</p>
+                            </li>
+                            <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/f.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                                Futures<i class="fa-solid fa-chevron-right" style="padding-left: 180px;"></i></a>
+                                <p>Trade Perpetual and Futures contracts <br>
+                                    settled in USDT,USDC, or other cryptos</p>
+                            </li>
+                            <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/o.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                                Options<img src="./Multimedia/Images/flame.svg" alt="" style="padding-left: 5px;">
+                            <i class="fa-solid fa-chevron-right" style="padding-left: 150px;"></i></a>
+                                <p>Trade Options contracts, settled in USDT or USDC</p>
+                            </li>
+                        
+                            <p style=" color: #72767a; font-size:14px; padding-left: 22px;">Explore</p>
+                            <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/tf.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                                TradFi</a>
+                                <p>Maximize your traditional product trades <br> using USDT on MT5-now 
+                                  with 500x <br> leverage</p>
+                            </li>
+                            <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/sx.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                                Spot X<i class="fa-solid fa-chevron-right" style="padding-left: 170px;"></i></a>
+                                <p>Launchpool, Token Splash, Puzzle Hunt, <br> ByVotes, and more</p>
+                            </li>
+                            <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/st.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                                Spread Trading</a>
+                                <p>Seamlessly profit from spreads with <br> atomic execution</p>
+                            </li>
+                            <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/pmt.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                                Pre-Market Trading<i class="fa-solid fa-chevron-right" style="padding-left: 90px;"></i></a>
+                                <p>Explore pre-market trading opportunities</p>
+                            </li>
+                        </ul>
+                </li>
+                <li class="nav-links-item"><a href="#">Tools<i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/ct.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Copy Trading<img src="./Multimedia/Images/flame.svg" alt="" style="padding-left: 5px;">
+                            <i class="fa-solid fa-chevron-right" style="padding-left: 150px;"></i></a>
+                                <p>Lets top traders work for you</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/tg.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            TradeGPT <span style="padding: 2px 2px; color: black; font-size: 10px; border-radius: 4px; background-color: #f7a500; font-weight: bolder ;">NEW</span>
+                            <i class="fa-solid fa-chevron-right" style="padding-left: 160px;"></i></a>
+                            <p>Leveraged on AI-powered trading</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/tb.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Trading Bot</a>
+                            <p>Smart Trades Made Easy</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/lb.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Leaderboard</a>
+                            <p>Access a variety of trading tools to power <br> up your trading
+                                experience</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/tv.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            TradingView 
+                            <span style="padding-left: 5px;">NEW</span> </a>
+                              <p>Level up your crypto trading experience<br> with the best-in-class charting 
+                                and<br> analytical tools.</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/tfi.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            TradFi</a>
+                            <p>Maximize your traditional product trades<br> using USDT on MT5-now with
+                                500x <br> leverage</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/pb.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Position Builder</a>
+                            <p>Simulate PnL for Perp/Futures/Options <br> combos before placing orders</p>
+                        </li>
+                         <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/dt.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Demo Trading<img src="./Multimedia/Images/flame.svg" alt="" style="padding-left: 5px;"></a>
+                            <p>Practice trading without risking your own <br> capital</p>
+                        </li>
+                    </ul>
+                </li> 
+                <li class="nav-links-item"><a href="#">Finance<i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/e.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Earn<i class="fa-solid fa-chevron-right" style="padding-left: 280px;"></i></a>
+                            <p>Easy-access to grow your crypto</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/bsp.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Bybit Structured Products<i class="fa-solid fa-chevron-right" style="padding-left: 170px;"></i></a>
+                            <p>Get high yield despite price volatility</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/cl.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Crypto Loans</a>
+                            <p>High LTV Crypto Loans. Repay Anytime.</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/mss.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Margin Staked SOL</a>
+                            <p>Maximize your on-chain SOL rewards <br> with margin borrowing!</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/ca.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Card</a>
+                            <p>Spend Crypto Instantly & Globally</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/bp.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            Bybit Pay<img src="./Multimedia/Images/flame.svg" alt="" style="padding-left: 5px;"></a>
+                            <p>Life is Paid Bit Bybit</p>
+                        </li>
+                        <li class="dropdown-menu-item"><a href="" style="display: flex; align-items: center;">
+                            <img src="./Multimedia/Images/ot.svg" alt="" style="padding-right: 10px; padding-left: 10px;">
+                            OTC Trading</a>
+                            <p>Large Orders, Competitive Prices, Instant <br> settlement</p>
+                        </li>
+                    </ul>
+                </li> 
+                <li class="nav-links-item"><a href="#">More<i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <div><a href="" style="color: white; text-decoration: none;background-color: #24272b; padding: 10px; 
+                        display: flex; align-items: center;"><img src="./Multimedia/Images/bla.svg" alt="" style="padding: 10px;">
+                        Bybit Lens | AI-powered token analysis and market insights</a></div>
+                        <div style="display: flex;">
+                        <ul class="dropdown-menu" style="list-style: none;">
+                            <p style="color: #f7a500; margin-top: 20px; margin-bottom: 30px; padding-left: 22px;">Explore Products</p>
+                            <li class="dropdown-menu-item-2"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/rh.svg" alt="" style="padding-right: 10px; padding-left: 22px;">
+                                Rewards Hub</a>
+                                <p>Complete simple tasks to claim <br> rewards deals</p>
+                            </li>
+                            <li class="dropdown-menu-item-2"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/ls.svg" alt="" style="padding-right: 10px; padding-left: 22px;">
+                                Livestream</a>
+                                <p>Watch livestreams to receive airdrops</p>
+                            </li>
+                            <li class="dropdown-menu-item-2"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/bl.svg" alt="" style="padding-right: 10px; padding-left: 22px;">
+                                Bybit Learn<span style="padding: 2px 2px; color: black; font-size: 10px; border-radius: 4px; background-color: #f7a500; font-weight: bolder ;">NEW</span></a>
+                                <p>Boost your trading skills with expert <br> crypto knowledge</p>
+                            </li>
+                            <li class="dropdown-menu-item-2"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/a.svg" alt="" style="padding-right: 10px; padding-left: 22px;">
+                                Announcements</a>
+                                <p>Stay updated on the latest news</p>
+                            </li>
+                            <li class="dropdown-menu-item-2"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/ia.svg" alt="" style="padding-right: 10px; padding-left: 22px;">
+                                Islamic Account</a>
+                                <p>Shariah-compliant account with no <br> interest, ensuring peace
+                                    of mind for <br> Muslim investors.</p>
+                            </li>
+                            <li class="dropdown-menu-item-2"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/hc.svg" alt="" style="padding-right: 10px; padding-left: 22px;">
+                                Help Center</a>
+                                <p>Access support for any product <br>
+                                    inquiries</p>
+                            </li>
+                        </ul>
+                        <ul class="dropdown-menu" style="list-style: none;" >
+                            <p style="color: #f7a500; margin-top: 20px; margin-bottom: 30px; padding-left: 22px;">Programs</p>
+                            <li class="dropdown-menu-item-2"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/vp.svg" alt="" style="padding-right: 10px; padding-left: 22px;">
+                                VIP Program<span style="padding: 2px 2px; color: black; font-size: 10px; border-radius: 4px; background-color: #f7a500; font-weight: bolder ;">NEW</span></a>
+                                <p>Get exclusive access to fee discounts <br> & more </p>
+                            </li>
+                            <li class="dropdown-menu-item-2"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/is.svg" alt="" style="padding-right: 10px; padding-left: 22px;">
+                                Institutional Services</a>
+                                <p>Bespoke trading solutions, Ultra-low <br> fee rates, Customized support</p>
+                            </li>
+                            <li class="dropdown-menu-item-2"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/rp.svg" alt="" style="padding-right: 10px; padding-left: 22px;">
+                                Referral Program</a>
+                                <p>Invite friends to earn over 1,720 USDT <br> and 30% commission via Spot, <br>
+                                    Derivatives, Copy Trading, and Bybit <br> Card.</p>
+                            </li>
+                            <li class="dropdown-menu-item-2"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/ap.svg" alt="" style="padding-right: 10px; padding-left: 22px;">
+                                Affliate Program<img src="./Multimedia/Images/flame.svg" alt="" style="padding-left: 5px;"></a>
+                                <p>Unlock exclusive offers, grow your <br> netwrok, and earn up to 50% <br>
+                                    commission as a Bybit Affliate.</p>
+                            </li>
+                            <li class="dropdown-menu-item-2"><a href="" style="display: flex; align-items: center;">
+                                <img src="./Multimedia/Images/bpm.svg" alt="" style="padding-right: 10px; padding-left: 22px;">
+                                Broker Program</a>
+                                <p>Get up to 50% rebate for three <br> months </p>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                </li> 
+                </ul>
+            </div>
+
+            <div class="deadpool">
+                <a href="#"><img src="./img/image-0ce4ee1811fa4aaeadb4ff7cb7d102c6 (1).png" alt="" style="width: 70px; 
+                padding-top: 15px; padding-left: 7px;"></a>
+            </div>
+        
+            <div class="search-box">
+                    <img src="./Multimedia/Images/search icon gg.png" class="icon search-icon" alt="">
+                    <img src="./Multimedia/Images/flame.svg" class="icon fire-icon" alt="">
+                    <input type="text" placeholder="BTC/USDT" name="search">
+            </div>
+         </div> 
+
+         <div class="sideright">
+             <div class="logsign">
+                <a href="#" class="log">Log In</a>
+                <a href="#" class="sign">Sign up</a>
+            </div>
+            <div class="drpdown">
+                <img class="arrow" src="./Multimedia/Images/Download arrow.svg" alt="">
+                <div class="drpmenu">
+                    <img class="drpmenuitem1" src="./Multimedia/Images/Qr-code.avif" alt="">
+                    <p class="drpmenuitem2">Scan to Download App</p>
+                    <a href="" class="drpmenuitem3">More Download Options</a>
+                </div>
+            </div>
+            <!-- <img class="globe" src="./Multimedia/Images/Globe icon.svg" alt="">
+            <img class="sch" src="./Multimedia/Images/magnifying-glass.png" alt="" width="20px" height="20px">
+            <img class="menu" src="./Multimedia/Images/menus.png" alt="" width="20px" height="20px"> -->
+        </div>
+         
+    </div>
+    <div style="height: 50px;"></div>
+    
+    <div class="logincont">
+        <div class="LogLeft">
+            <div class="cs">
+                <!-- <img class="circle" src="./img/133bf6f8-b77f-4092-81ca-4071df636950.svg" alt=""> -->
+                <img class="star" src="./img/smallStar.png" alt="" style="margin-right: 50px;">
+                <img class="by" src="./img/download.svg" alt="">
+            </div>
+            <div class="seize">
+               <p style="padding-top: 50px;">Seize You<span style="color: #72767a;">r Next Trading</span> <br> Opportuni<span style="color: #72767a;">ty With 
+                Bybit</span></p> 
+            </div>
+            <div class="box4">
+                <div class="b4">
+                    <img src="./img/countries1.png" alt="">
+                    <p class="pp1">160</p>
+                    <p class="pp2">Countries</p>
+                </div>
+                <div class="b4">
+                    <img src="./img/tokenListed1.png" alt="">
+                    <p class="pp3">1989</p>
+                    <p class="pp4">Tokens Listed</p>
+                </div>
+                <div class="b4">
+                    <img src="./img/24HTradingVolume1.png" alt="">
+                    <p class="pp5">44B+</p>
+                    <p class="pp6">24H Trading Volume</p>
+                </div>
+                <div class="b4">
+                    <img src="./img/registeredUsers1.png" alt="">
+                    <p class="pp7">72M+</p>
+                    <p class="pp8">Registered Users</p>
+                </div>
+            </div>
+        </div>
+        <div class="LogRight">
+            <div class="bord">
+                <div class="wtbsu">
+                    <h2>Welcome to Bybit</h2>
+                    <div class="wtb">
+                        <span class="material-symbols-outlined" style="padding-right: 4px; 
+                        font-size: 18px;">sync_alt</span>
+                        <span>Sign Up</span>
+                    </div>
+                </div>
+                <div class="emq">
+                    <div style="border-bottom: 2.5px solid #f7a500;padding-bottom: 3px;">Email</div>
+                    <div style="color: #81858c;">Mobile</div>
+                    <div style="color: #81858c;">QR Code</div>
+                </div>
+                <form action="" method="get">
+                    <input type="text" id="Contact" placeholder="Email" required><br><br>
+                    <input type="text" id="Password" placeholder="Password" required><br><br>
+                </form>
+                <p class="Fp">Forgot password</p>
+                <button class="btli">Log in</button>
+                <div style="display: flex; align-items: center; padding: 20px; justify-content: center; gap: 15px;">
+                    <div class="linl"></div>
+                    <p class="pli">or log in with</p>
+                    <div class="linl"></div>
+                </div>
+                <div class="tga" style="display: flex; gap: 40px; justify-content: center; color: #81858c; font-size: 13px;
+                border-bottom: thin solid #e7e9ea; padding-bottom: 45px;">
+                    <div>
+                        <div class="sbox"><img style="width: 20px;" src="./img/bc8ada84-6670-4787-80c6-6239a5624a28.svg" alt=""></div>
+                        <p class="gat">Google</p>
+                    </div>
+                    <div>
+                        <div class="sbox"><img style="width: 25px;" src="./img/appstore-47ff262997f8d723706ca638f8bd9d67.svg" alt=""></div>
+                        <p class="gat">Apple</p>
+                    </div>
+                    <div>
+                        <div class="sbox"><img style="width: 20px;" src="./img/8b0acbce-3249-49f1-a16e-efa7ae87f953.svg" alt=""></div>
+                        <p class="gat">Telegram</p>
+                    </div>
+                </div>
+                <div class="liwsa">
+                    <p>Log in with subaccount</p>
+                    <span class="material-symbols-outlined" style="font-size: 18px; padding-left: 5px;">arrow_forward</span>
+                </div>
+            </div>
+            <div class="dowhea">
+            <div class="headphone"><img class="he" src="./img/6429732e-f786-4609-bc1b-a60f6f174c15.svg" alt=""></div>
+            </div>
+            <p style="color: #d8dbdd; font-size: 10px; text-align: center; padding-bottom: 15px;">
+                © 2018-2025 Bybit.com. All rights reserved.</p>
+        </div>
+    </div>
+
+    </div>
+    
+</body>
+</html>
